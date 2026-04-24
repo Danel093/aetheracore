@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/aethera-logo.png";
+import logo from "@/assets/aethera-octopus.png";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -38,7 +38,7 @@ export function SiteHeader() {
             <img
               src={logo}
               alt="Aethera Core logo"
-              className="h-10 w-auto md:h-12 drop-shadow-[0_0_12px_rgba(0,210,255,0.4)] transition-transform group-hover:scale-105"
+              className="h-11 w-11 md:h-14 md:w-14 rounded-full object-contain bg-transparent drop-shadow-[0_0_14px_rgba(0,210,255,0.55)] transition-transform group-hover:scale-105"
             />
             <span className="hidden sm:flex flex-col leading-none">
               <span className="font-display text-lg md:text-xl font-extrabold tracking-tight text-gradient-cyan">
