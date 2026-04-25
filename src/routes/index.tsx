@@ -72,12 +72,23 @@ function LandingPage() {
 
 /* ---------------- HERO ---------------- */
 function Hero() {
+  const autoplay = useRef(
+    Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true }),
+  );
+
+  const slides = [
+    { src: heroImage, alt: "Build PC Aethera Core completa", label: "Setup Insignia" },
+    { src: carouselGaming, alt: "PC Gamer con iluminación cyan", label: "Gaming Builds" },
+    { src: carouselMonitor, alt: "Monitor curvo gaming ultrawide", label: "Inmersión Total" },
+    { src: carouselPeripherals, alt: "Teclado mecánico y mouse RGB", label: "Periféricos Premium" },
+    { src: carouselWorkstation, alt: "Workstation profesional dual monitor", label: "Productividad Pro" },
+  ];
+
   return (
     <section
       id="home"
-      className="relative overflow-hidden pt-28 md:pt-36 pb-20 md:pb-32 bg-gradient-core"
+      className="relative overflow-hidden pt-24 md:pt-28 pb-16 md:pb-20 bg-gradient-core"
     >
-      {/* Background grid + glow */}
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div
         className="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full blur-3xl opacity-40 animate-pulse-glow pointer-events-none"
@@ -88,27 +99,22 @@ function Hero() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          {/* Copy */}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+          {/* Copy — compact */}
           <div className="text-center lg:text-left">
-            <span className="inline-flex items-center gap-2 rounded-full border border-cyan/30 bg-cyan/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan">
-              <Sparkles className="h-3.5 w-3.5" />
-              Hecho en Colombia
-            </span>
-
-            <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05]">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05]">
               <span className="text-gradient-cyan">Aethera Core:</span>
               <br />
               <span className="text-foreground">Eleva tu potencial.</span>
             </h1>
 
-            <p className="mt-6 max-w-xl mx-auto lg:mx-0 text-base md:text-lg text-muted-foreground leading-relaxed">
+            <p className="mt-5 max-w-xl mx-auto lg:mx-0 text-base md:text-lg text-muted-foreground leading-relaxed">
               Redefinimos la experiencia tecnológica en Colombia. Hardware de alto
               rendimiento equilibrando{" "}
               <span className="text-silver font-semibold">potencia y costo.</span>
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <a
                 href="#gaming"
                 className="group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground transition-all hover:shadow-[0_0_40px_-5px_rgba(0,210,255,0.8)] hover:scale-[1.03]"
@@ -124,7 +130,7 @@ function Hero() {
               </a>
             </div>
 
-            <dl className="mt-12 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
+            <dl className="mt-8 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
               {[
                 { k: "+500", v: "Builds entregadas" },
                 { k: "100%", v: "Cobertura nacional" },
@@ -140,16 +146,35 @@ function Hero() {
             </dl>
           </div>
 
-          {/* Visual */}
-          <div className="relative animate-float">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-cyan/30 via-transparent to-cyan/20 blur-2xl" />
+          {/* Carousel */}
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-cyan/30 via-transparent to-cyan/20 blur-2xl pointer-events-none" />
             <div className="relative rounded-2xl border border-border/60 overflow-hidden glow-cyan bg-card">
-              <img
-                src={heroImage}
-                alt="Build PC Aethera Core con monitor, teclado y caja"
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
+              <Carousel
+                opts={{ loop: true, align: "start" }}
+                plugins={[autoplay.current]}
+                className="w-full"
+              >
+                <CarouselContent className="ml-0">
+                  {slides.map((slide) => (
+                    <CarouselItem key={slide.alt} className="pl-0 basis-full">
+                      <div className="relative aspect-[4/3] md:aspect-[5/4] w-full">
+                        <img
+                          src={slide.src}
+                          alt={slide.alt}
+                          className="absolute inset-0 h-full w-full object-cover"
+                          loading="eager"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/20 to-transparent pointer-events-none" />
+                        <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-cyan/40 bg-background/70 backdrop-blur px-3 py-1.5 text-xs font-semibold text-cyan">
+                          <span className="h-1.5 w-1.5 rounded-full bg-cyan animate-pulse" />
+                          {slide.label}
+                        </span>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
           </div>
         </div>
@@ -374,7 +399,7 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Aethera Core" className="h-10 w-auto" />
+              <img src={octopusLogo} alt="Aethera Core" className="h-12 w-12 rounded-full object-contain drop-shadow-[0_0_12px_rgba(0,210,255,0.5)]" />
               <span className="font-display text-lg font-extrabold text-gradient-cyan">
                 AETHERA CORE
               </span>
@@ -386,7 +411,7 @@ function Footer() {
               {[
                 { Icon: Instagram, label: "Instagram", href: "#" },
                 { Icon: Facebook, label: "Facebook", href: "#" },
-                { Icon: Youtube, label: "YouTube", href: "#" },
+                { Icon: TikTokIcon, label: "TikTok", href: "#" },
               ].map(({ Icon, label, href }) => (
                 <a
                   key={label}
