@@ -9,11 +9,11 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-const WHATSAPP_NUMBER = "573000000000"; // TODO: replace
+const WHATSAPP_NUMBER = "573017367858";
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hola Aethera Core, me gustaría recibir asesoría directa.",
+  "🚀 ¡Hola Aethera Core! Quiero llevar mi setup al siguiente nivel. ¿Me asesoran con mi build ideal?",
 );
-const MESSENGER_URL = "https://m.me/aetheracore"; // TODO: replace username
+const MESSENGER_URL = "https://m.me/aetheracore";
 
 export function FloatingActions() {
   return (
