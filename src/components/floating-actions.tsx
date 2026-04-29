@@ -47,7 +47,7 @@ export function FloatingActions() {
         aria-label="Asesoría directa por WhatsApp"
         className="group relative flex items-center gap-3"
       >
-        <span className="hidden group-hover:inline-flex items-center rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-semibold text-foreground border border-border shadow-lg">
+        <span className="inline-flex items-center rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-semibold text-foreground border border-border shadow-lg transition-transform group-hover:scale-105">
           Asesoría Directa
         </span>
         <span className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full text-white shadow-[0_8px_30px_-5px_rgba(37,211,102,0.7)] transition-transform group-hover:scale-110"
