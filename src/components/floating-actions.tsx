@@ -26,7 +26,7 @@ export function FloatingActions() {
         aria-label="Chatear por Messenger"
         className="group relative flex items-center gap-3"
       >
-        <span className="hidden group-hover:inline-flex items-center rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-semibold text-foreground border border-border shadow-lg">
+        <span className="inline-flex items-center rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-semibold text-foreground border border-border shadow-lg transition-transform group-hover:scale-105">
           Consulta rápida
         </span>
         <span
