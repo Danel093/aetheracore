@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { MessageCircle } from "lucide-react";
+import { QuickConsultPanel } from "./quick-consult-panel";
 
 // WhatsApp icon (brand)
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -13,50 +15,55 @@ const WHATSAPP_NUMBER = "573017367858";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "🚀 ¡Hola Aethera Core! Quiero llevar mi setup al siguiente nivel. ¿Me asesoran con mi build ideal?",
 );
-const MESSENGER_URL = "https://m.me/aetheracore";
 
 export function FloatingActions() {
-  return (
-    <div className="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-50 flex flex-col items-end gap-3">
-      {/* Messenger */}
-      <a
-        href={MESSENGER_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chatear por Messenger"
-        className="group relative flex items-center gap-3"
-      >
-        <span className="inline-flex items-center rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-semibold text-foreground border border-border shadow-lg transition-transform group-hover:scale-105">
-          Consulta rápida
-        </span>
-        <span
-          className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full text-white shadow-[0_8px_30px_-5px_rgba(0,132,255,0.6)] transition-transform group-hover:scale-110"
-          style={{
-            background: "linear-gradient(135deg, #0084ff 0%, #00c6ff 100%)",
-          }}
-        >
-          <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
-        </span>
-      </a>
+  const [panelOpen, setPanelOpen] = useState(false);
 
-      {/* WhatsApp */}
-      <a
-        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Asesoría directa por WhatsApp"
-        className="group relative flex items-center gap-3"
-      >
-        <span className="inline-flex items-center rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-semibold text-foreground border border-border shadow-lg transition-transform group-hover:scale-105">
-          Asesoría Directa
-        </span>
-        <span className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full text-white shadow-[0_8px_30px_-5px_rgba(37,211,102,0.7)] transition-transform group-hover:scale-110"
-          style={{ background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)" }}
+  return (
+    <>
+      <div className="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-50 flex flex-col items-end gap-3">
+        {/* Consulta rápida → abre panel */}
+        <button
+          type="button"
+          onClick={() => setPanelOpen(true)}
+          aria-label="Abrir panel de consulta rápida"
+          className="group relative flex items-center gap-3"
         >
-          <span className="absolute inset-0 rounded-full animate-ping opacity-30" style={{ background: "#25D366" }} />
-          <WhatsAppIcon className="relative h-7 w-7 sm:h-8 sm:w-8" />
-        </span>
-      </a>
-    </div>
+          <span className="inline-flex items-center rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-semibold text-foreground border border-border shadow-lg transition-transform group-hover:scale-105">
+            Consulta rápida
+          </span>
+          <span
+            className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full text-white shadow-[0_8px_30px_-5px_rgba(0,132,255,0.6)] transition-transform group-hover:scale-110"
+            style={{
+              background: "linear-gradient(135deg, #0084ff 0%, #00c6ff 100%)",
+            }}
+          >
+            <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
+          </span>
+        </button>
+
+        {/* WhatsApp directo */}
+        <a
+          href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Asesoría directa por WhatsApp"
+          className="group relative flex items-center gap-3"
+        >
+          <span className="inline-flex items-center rounded-full bg-background/90 backdrop-blur px-3 py-1.5 text-xs font-semibold text-foreground border border-border shadow-lg transition-transform group-hover:scale-105">
+            Asesoría Directa
+          </span>
+          <span
+            className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full text-white shadow-[0_8px_30px_-5px_rgba(37,211,102,0.7)] transition-transform group-hover:scale-110"
+            style={{ background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)" }}
+          >
+            <span className="absolute inset-0 rounded-full animate-ping opacity-30" style={{ background: "#25D366" }} />
+            <WhatsAppIcon className="relative h-7 w-7 sm:h-8 sm:w-8" />
+          </span>
+        </a>
+      </div>
+
+      <QuickConsultPanel open={panelOpen} onOpenChange={setPanelOpen} />
+    </>
   );
 }
