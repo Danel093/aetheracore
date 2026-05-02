@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageCircle, Send, X } from "lucide-react";
+import { MessageCircle, Send } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -66,13 +66,6 @@ export function QuickConsultPanel({ open, onOpenChange }: Props) {
               </SheetDescription>
             </div>
           </div>
-          <button
-            onClick={() => onOpenChange(false)}
-            aria-label="Cerrar panel"
-            className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground hover:text-cyan hover:bg-cyan/10 transition-colors"
-          >
-            <X className="h-4 w-4" />
-          </button>
         </SheetHeader>
 
         {/* Form */}
