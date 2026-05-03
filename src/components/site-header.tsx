@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/aethera-octopus.png";
 import { cn } from "@/lib/utils";
 
-const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
-  { label: "Gaming PCs", href: "#gaming" },
-  { label: "Productividad", href: "#productividad" },
-  { label: "Periféricos", href: "#perifericos" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Contacto", href: "#contacto" },
+type NavItem = { label: string; to?: string; href?: string };
+
+const NAV_ITEMS: NavItem[] = [
+  { label: "Home", to: "/" },
+  { label: "Gaming PCs", to: "/gaming" },
+  { label: "Productividad", to: "/productividad" },
+  { label: "Periféricos", to: "/perifericos" },
+  { label: "Nosotros", href: "/#nosotros" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 export function SiteHeader() {
@@ -34,7 +37,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 md:h-20 items-center justify-between">
-          <a href="#home" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <img
               src={logo}
               alt="Aethera Core logo"
@@ -48,23 +51,38 @@ export function SiteHeader() {
                 Tecnología en movimiento
               </span>
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
-            {NAV_ITEMS.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="relative px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors group"
-              >
-                {item.label}
-                <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-cyan to-transparent scale-x-0 group-hover:scale-x-100 transition-transform" />
-              </a>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const className =
+                "relative px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors group";
+              const inner = (
+                <>
+                  {item.label}
+                  <span className="absolute left-4 right-4 -bottom-0.5 h-px bg-gradient-to-r from-transparent via-cyan to-transparent scale-x-0 group-hover:scale-x-100 transition-transform" />
+                </>
+              );
+              return item.to ? (
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  className={className}
+                  activeProps={{ className: cn(className, "text-cyan") }}
+                  activeOptions={{ exact: item.to === "/" }}
+                >
+                  {inner}
+                </Link>
+              ) : (
+                <a key={item.label} href={item.href} className={className}>
+                  {inner}
+                </a>
+              );
+            })}
           </nav>
 
           <a
-            href="#contacto"
+            href="/#contacto"
             className="hidden lg:inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_0_30px_-5px_rgba(0,210,255,0.7)] hover:scale-[1.03]"
           >
             Cotizar
@@ -82,18 +100,29 @@ export function SiteHeader() {
 
         {open && (
           <div className="lg:hidden pb-4 space-y-1 border-t border-border/60 pt-3">
-            {NAV_ITEMS.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-foreground/90 hover:bg-secondary hover:text-cyan transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
+            {NAV_ITEMS.map((item) =>
+              item.to ? (
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-md px-3 py-2 text-base font-medium text-foreground/90 hover:bg-secondary hover:text-cyan transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-md px-3 py-2 text-base font-medium text-foreground/90 hover:bg-secondary hover:text-cyan transition-colors"
+                >
+                  {item.label}
+                </a>
+              ),
+            )}
             <a
-              href="#contacto"
+              href="/#contacto"
               onClick={() => setOpen(false)}
               className="mt-2 block rounded-md bg-primary px-3 py-2 text-center text-base font-semibold text-primary-foreground"
             >

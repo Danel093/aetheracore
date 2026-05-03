@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProductividadRouteImport } from './routes/productividad'
+import { Route as PerifericosRouteImport } from './routes/perifericos'
+import { Route as GamingRouteImport } from './routes/gaming'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ProductividadRoute = ProductividadRouteImport.update({
+  id: '/productividad',
+  path: '/productividad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerifericosRoute = PerifericosRouteImport.update({
+  id: '/perifericos',
+  path: '/perifericos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GamingRoute = GamingRouteImport.update({
+  id: '/gaming',
+  path: '/gaming',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/gaming': typeof GamingRoute
+  '/perifericos': typeof PerifericosRoute
+  '/productividad': typeof ProductividadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/gaming': typeof GamingRoute
+  '/perifericos': typeof PerifericosRoute
+  '/productividad': typeof ProductividadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/gaming': typeof GamingRoute
+  '/perifericos': typeof PerifericosRoute
+  '/productividad': typeof ProductividadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/gaming' | '/perifericos' | '/productividad'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/gaming' | '/perifericos' | '/productividad'
+  id: '__root__' | '/' | '/gaming' | '/perifericos' | '/productividad'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GamingRoute: typeof GamingRoute
+  PerifericosRoute: typeof PerifericosRoute
+  ProductividadRoute: typeof ProductividadRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/productividad': {
+      id: '/productividad'
+      path: '/productividad'
+      fullPath: '/productividad'
+      preLoaderRoute: typeof ProductividadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perifericos': {
+      id: '/perifericos'
+      path: '/perifericos'
+      fullPath: '/perifericos'
+      preLoaderRoute: typeof PerifericosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gaming': {
+      id: '/gaming'
+      path: '/gaming'
+      fullPath: '/gaming'
+      preLoaderRoute: typeof GamingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GamingRoute: GamingRoute,
+  PerifericosRoute: PerifericosRoute,
+  ProductividadRoute: ProductividadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
