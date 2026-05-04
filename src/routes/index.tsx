@@ -187,6 +187,7 @@ function Hero() {
 const SERVICES = [
   {
     id: "gaming",
+    to: "/gaming" as const,
     icon: Gamepad2,
     title: "Gaming",
     tagline: "Build for performance.",
@@ -195,6 +196,7 @@ const SERVICES = [
   },
   {
     id: "productividad",
+    to: "/productividad" as const,
     icon: Cpu,
     title: "Productividad",
     tagline: "Power for professionals.",
@@ -203,6 +205,7 @@ const SERVICES = [
   },
   {
     id: "perifericos",
+    to: "/perifericos" as const,
     icon: Globe2,
     title: "Conexión Global",
     tagline: "Cutting-edge for a connected world.",
