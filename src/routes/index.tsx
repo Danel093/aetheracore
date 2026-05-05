@@ -256,13 +256,13 @@ function CoreServices() {
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {s.description}
                 </p>
-                <a
-                  href="#contacto"
+                <Link
+                  to={s.to}
                   className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-cyan transition-colors"
                 >
-                  Cotizar build
+                  Quiero ver más
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </div>
             </article>
           ))}
