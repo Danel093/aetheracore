@@ -115,13 +115,13 @@ function Hero() {
             </p>
 
             <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <a
-                href="#gaming"
+              <Link
+                to="/gaming"
                 className="group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground transition-all hover:shadow-[0_0_40px_-5px_rgba(0,210,255,0.8)] hover:scale-[1.03]"
               >
                 Explorar PCs Gaming
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              </Link>
               <a
                 href="#nosotros"
                 className="inline-flex items-center justify-center rounded-md border border-border bg-card/50 backdrop-blur px-7 py-3.5 text-sm font-semibold text-foreground hover:border-cyan hover:text-cyan transition-all"
