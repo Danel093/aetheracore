@@ -1,4 +1,5 @@
-import { ArrowRight, Sparkles, Star, TrendingUp } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Sparkles, Star, TrendingUp, X, ImageIcon } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { FloatingActions } from "@/components/floating-actions";
 
@@ -8,6 +9,7 @@ export type Product = {
   description: string;
   price: string;
   badge?: "Nuevo" | "Top ventas" | "Oferta";
+  image?: string;
 };
 
 export type CategoryPageProps = {
@@ -23,6 +25,8 @@ export type CategoryPageProps = {
 };
 
 export function CategoryPage(props: CategoryPageProps) {
+  const [activeProduct, setActiveProduct] = useState<Product | null>(null);
+
   const wa = `https://wa.me/573017367858?text=${encodeURIComponent(
     `🚀 ¡Hola Aethera Core! Me interesa ${props.title}. ¿Me asesoran?`,
   )}`;
@@ -109,16 +113,17 @@ export function CategoryPage(props: CategoryPageProps) {
                 </h2>
               </div>
               <p className="text-sm text-muted-foreground max-w-sm">
-                Lo que más se mueve en el mercado colombiano, curado por
-                nuestros especialistas.
+                Click en cualquier producto para ver su imagen ampliada.
               </p>
             </div>
 
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {props.popular.map((p) => (
-                <article
+                <button
                   key={p.name}
-                  className="glow-cyan-hover group relative rounded-2xl border border-border bg-card p-6 flex flex-col"
+                  type="button"
+                  onClick={() => setActiveProduct(p)}
+                  className="glow-cyan-hover group relative rounded-2xl border border-border bg-card p-6 flex flex-col text-left hover:border-cyan/60 transition-all hover:-translate-y-1 cursor-pointer"
                 >
                   {p.badge && (
                     <span className="absolute top-4 right-4 inline-flex items-center gap-1 rounded-full border border-cyan/40 bg-cyan/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-cyan">
@@ -139,19 +144,12 @@ export function CategoryPage(props: CategoryPageProps) {
                     <span className="font-display text-lg font-extrabold text-gradient-cyan">
                       {p.price}
                     </span>
-                    <a
-                      href={`https://wa.me/573017367858?text=${encodeURIComponent(
-                        `🚀 Hola, me interesa: ${p.name}`,
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-foreground hover:text-cyan transition-colors"
-                    >
-                      Cotizar
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </a>
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-foreground group-hover:text-cyan transition-colors">
+                      <ImageIcon className="h-3.5 w-3.5" />
+                      Ver imagen
+                    </span>
                   </div>
-                </article>
+                </button>
               ))}
             </div>
           </div>
@@ -259,6 +257,81 @@ export function CategoryPage(props: CategoryPageProps) {
         </section>
       </main>
       <FloatingActions />
+
+      {/* Floating product preview */}
+      {activeProduct && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+          onClick={() => setActiveProduct(null)}
+        >
+          <div className="absolute inset-0 bg-background/80 backdrop-blur-md" />
+          <div
+            className="relative z-10 w-full max-w-2xl rounded-2xl border border-cyan/40 bg-card shadow-2xl glow-cyan overflow-hidden animate-in zoom-in-95 slide-in-from-bottom-4 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActiveProduct(null)}
+              className="absolute top-3 right-3 z-20 inline-flex h-9 w-9 items-center justify-center rounded-full bg-background/80 border border-border text-foreground hover:bg-cyan hover:text-background transition-colors"
+              aria-label="Cerrar"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            <div className="grid md:grid-cols-2">
+              <div className="relative aspect-square md:aspect-auto bg-gradient-core">
+                {activeProduct.image ? (
+                  <img
+                    src={activeProduct.image}
+                    alt={activeProduct.name}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                    width={768}
+                    height={768}
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-cyan/40">
+                    <ImageIcon className="h-16 w-16" />
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent md:bg-gradient-to-r" />
+              </div>
+              <div className="p-6 md:p-7 flex flex-col">
+                {activeProduct.badge && (
+                  <span className="self-start inline-flex items-center gap-1 rounded-full border border-cyan/40 bg-cyan/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-cyan mb-3">
+                    <Star className="h-3 w-3" />
+                    {activeProduct.badge}
+                  </span>
+                )}
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  {activeProduct.tag}
+                </span>
+                <h3 className="mt-1.5 font-display text-2xl font-extrabold">
+                  {activeProduct.name}
+                </h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">
+                  {activeProduct.description}
+                </p>
+                <div className="mt-5 pt-4 border-t border-border/60">
+                  <span className="block font-display text-2xl font-extrabold text-gradient-cyan">
+                    {activeProduct.price}
+                  </span>
+                  <a
+                    href={`https://wa.me/573017367858?text=${encodeURIComponent(
+                      `🚀 Hola, me interesa: ${activeProduct.name}`,
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-bold text-primary-foreground transition-all hover:shadow-[0_0_30px_-5px_rgba(0,210,255,0.8)]"
+                  >
+                    Cotizar por WhatsApp
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
