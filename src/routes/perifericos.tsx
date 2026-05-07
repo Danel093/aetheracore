@@ -1,6 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/category-page";
 import heroImg from "@/assets/carousel-peripherals.jpg";
+import imgKeyboard from "@/assets/product-keyboard.jpg";
+import imgMouse from "@/assets/product-mouse.jpg";
+import imgMonitor from "@/assets/product-monitor.jpg";
+import imgHeadset from "@/assets/product-headset.jpg";
+import imgRouter from "@/assets/product-router.jpg";
 
 export const Route = createFileRoute("/perifericos")({
   head: () => ({
@@ -39,6 +44,7 @@ export const Route = createFileRoute("/perifericos")({
             "75% layout, hot-swap, switches Gateron, RGB south-facing y firmware QMK/VIA.",
           price: "Desde $389.000",
           badge: "Top ventas",
+          image: imgKeyboard,
         },
         {
           name: "Mouse Inalámbrico Pulse 4K",
@@ -47,6 +53,7 @@ export const Route = createFileRoute("/perifericos")({
             "Sensor PixArt 3395, 4000Hz polling, 60g. Pensado para FPS competitivo.",
           price: "Desde $329.000",
           badge: "Nuevo",
+          image: imgMouse,
         },
         {
           name: "Monitor 27\" QHD 180Hz IPS",
@@ -55,6 +62,7 @@ export const Route = createFileRoute("/perifericos")({
             "1440p, IPS Fast, HDR400, 1ms GtG. El sweet spot para gaming y productividad.",
           price: "Desde $1.290.000",
           badge: "Top ventas",
+          image: imgMonitor,
         },
         {
           name: "Monitor 32\" 4K 144Hz HDR",
@@ -62,6 +70,7 @@ export const Route = createFileRoute("/perifericos")({
           description:
             "4K UHD, MiniLED HDR1000, USB-C 90W. Perfecto para creadores y gaming AAA.",
           price: "Desde $3.490.000",
+          image: imgMonitor,
         },
         {
           name: "Headset HiFi Cloud Studio",
@@ -69,6 +78,7 @@ export const Route = createFileRoute("/perifericos")({
           description:
             "Drivers 50mm, micrófono cardioide, DAC integrado. Para gaming, calls y mezcla.",
           price: "Desde $549.000",
+          image: imgHeadset,
         },
         {
           name: "Router WiFi 6E Mesh Tri-band",
@@ -77,6 +87,7 @@ export const Route = createFileRoute("/perifericos")({
             "Pack 2 nodos, 6Gbps, cobertura 400m². Latencia mínima para gaming online.",
           price: "Desde $1.190.000",
           badge: "Oferta",
+          image: imgRouter,
         },
       ]}
       novelties={[

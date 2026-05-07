@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CategoryPage } from "@/components/category-page";
 import heroImg from "@/assets/carousel-gaming-pc.jpg";
+import imgGaming from "@/assets/product-gaming.jpg";
+import imgMiniPc from "@/assets/product-mini-pc.jpg";
+import imgMonitor from "@/assets/product-monitor.jpg";
 
 export const Route = createFileRoute("/gaming")({
   head: () => ({
@@ -39,6 +42,7 @@ export const Route = createFileRoute("/gaming")({
             "Ryzen 5 5600 + RTX 4060 + 16GB DDR4. La mejor relación FPS/precio para 1080p ultra.",
           price: "Desde $3.290.000",
           badge: "Top ventas",
+          image: imgGaming,
         },
         {
           name: "Aethera Pulse R7",
@@ -47,6 +51,7 @@ export const Route = createFileRoute("/gaming")({
             "Ryzen 7 7700 + RTX 4070 SUPER + 32GB DDR5. 1440p ultra y 4K alto sin compromisos.",
           price: "Desde $5.890.000",
           badge: "Top ventas",
+          image: imgGaming,
         },
         {
           name: "Aethera Apex i7",
@@ -55,6 +60,7 @@ export const Route = createFileRoute("/gaming")({
             "Core i7-14700K + RTX 4070 Ti + 32GB DDR5 + WiFi 6E. Juega y stremea sin caídas de FPS.",
           price: "Desde $7.450.000",
           badge: "Nuevo",
+          image: imgGaming,
         },
         {
           name: "Aethera Vortex i9",
@@ -62,6 +68,7 @@ export const Route = createFileRoute("/gaming")({
           description:
             "Core i9-14900K + RTX 4080 SUPER + 64GB DDR5 + AIO 360mm. 4K ultra a 120 FPS.",
           price: "Desde $12.990.000",
+          image: imgGaming,
         },
         {
           name: "Aethera Compact ITX",
@@ -70,6 +77,7 @@ export const Route = createFileRoute("/gaming")({
             "Build SFF Ryzen 7 + RTX 4070 en chasis ITX. Mismo poder, mitad del espacio.",
           price: "Desde $6.290.000",
           badge: "Nuevo",
+          image: imgMiniPc,
         },
         {
           name: "Aethera Esports Lite",
@@ -78,6 +86,7 @@ export const Route = createFileRoute("/gaming")({
             "Ryzen 5 + RTX 4060 + monitor 180Hz incluido. Optimizado para Valorant, CS2 y LoL.",
           price: "Desde $4.190.000",
           badge: "Oferta",
+          image: imgMonitor,
         },
       ]}
       novelties={[
