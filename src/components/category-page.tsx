@@ -144,10 +144,18 @@ export function CategoryPage(props: CategoryPageProps) {
                     <span className="font-display text-lg font-extrabold text-gradient-cyan">
                       {p.price}
                     </span>
-                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-foreground group-hover:text-cyan transition-colors">
-                      <ImageIcon className="h-3.5 w-3.5" />
-                      Ver imagen
-                    </span>
+                    <a
+                      href={`https://wa.me/573017367858?text=${encodeURIComponent(
+                        `🚀 Hola, me interesa: ${p.name}`,
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 rounded-md bg-primary/10 border border-cyan/40 px-3 py-1.5 text-xs font-bold text-cyan hover:bg-primary hover:text-primary-foreground transition-all"
+                    >
+                      Cotizar
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
                   </div>
                 </button>
               ))}
