@@ -12,7 +12,6 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Productividad", to: "/productividad" },
   { label: "Periféricos", to: "/perifericos" },
   { label: "Nosotros", href: "/#nosotros" },
-  { label: "Contacto", href: "/#contacto" },
 ];
 
 export function SiteHeader() {
@@ -85,7 +84,7 @@ export function SiteHeader() {
             href="/#contacto"
             className="hidden lg:inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_0_30px_-5px_rgba(0,210,255,0.7)] hover:scale-[1.03]"
           >
-            Cotizar
+            Contacto
           </a>
 
           <button
@@ -126,7 +125,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-2 block rounded-md bg-primary px-3 py-2 text-center text-base font-semibold text-primary-foreground"
             >
-              Cotizar
+              Contacto
             </a>
           </div>
         )}
