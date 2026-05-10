@@ -52,7 +52,7 @@ export function QuickConsultPanel({ open, onOpenChange }: Props) {
       >
         {/* Header */}
         <SheetHeader className="relative p-6 border-b border-border/60 space-y-0">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 pr-10">
             <img
               src={octopusLogo}
               alt="Aethera Core"
@@ -67,6 +67,10 @@ export function QuickConsultPanel({ open, onOpenChange }: Props) {
               </SheetDescription>
             </div>
           </div>
+          <SheetClose className="absolute right-4 top-4 z-50 inline-flex h-8 w-8 items-center justify-center rounded-md text-foreground/70 hover:text-cyan hover:bg-background/60 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan/40">
+            <X className="h-4 w-4" />
+            <span className="sr-only">Cerrar</span>
+          </SheetClose>
         </SheetHeader>
 
         {/* Form */}
