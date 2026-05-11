@@ -48,7 +48,7 @@ export function QuickConsultPanel({ open, onOpenChange }: Props) {
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent
         side="right"
-        className="w-full sm:max-w-sm bg-card/95 backdrop-blur-xl border-l border-cyan/20 p-0 flex flex-col"
+        className="w-full sm:max-w-sm bg-card/95 backdrop-blur-xl border-l border-cyan/20 p-0 flex flex-col [&>button.absolute]:hidden"
       >
         {/* Header */}
         <SheetHeader className="relative p-6 border-b border-border/60 space-y-0">
