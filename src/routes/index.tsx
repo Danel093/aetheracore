@@ -36,19 +36,23 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aethera Core — Eleva tu potencial | Gaming & Productividad" },
+      { title: "Aethera Core — Eleva tu potencial" },
       {
         name: "description",
         content:
-          "Hardware de alto rendimiento en Colombia. PCs Gaming, productividad profesional y periféricos. Especialistas en gama media con envíos a todo el país.",
+          "Hardware de alto rendimiento en Colombia. PCs Gaming, productividad y periféricos con envíos a todo el país.",
       },
       { property: "og:title", content: "Aethera Core — Eleva tu potencial" },
       {
         property: "og:description",
         content: "Redefinimos la experiencia tecnológica en Colombia.",
       },
+      { property: "og:url", content: "https://aetheracore.lovable.app/" },
       { property: "og:image", content: heroImage },
       { name: "twitter:image", content: heroImage },
+    ],
+    links: [
+      { rel: "canonical", href: "https://aetheracore.lovable.app/" },
     ],
   }),
   component: LandingPage,
