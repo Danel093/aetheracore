@@ -7,6 +7,25 @@ import imgMonitor from "@/assets/product-monitor.jpg";
 import imgHeadset from "@/assets/product-headset.jpg";
 import imgRouter from "@/assets/product-router.jpg";
 
+const FAQ = [
+  {
+    q: "Hertz vs respuesta de panel",
+    a: "180Hz IPS es el sweet spot 2026 para gaming + trabajo. 240Hz+ solo si juegas competitivo. OLED si priorizas color sobre brillo.",
+  },
+  {
+    q: "Mecánico: ¿qué switch?",
+    a: "Lineales (Red, Yellow) para gaming. Tactiles (Brown, Holy Panda) para escritura mixta. Clickys (Blue) si no compartes oficina.",
+  },
+  {
+    q: "Audio: abierto o cerrado",
+    a: "Auriculares abiertos suenan más natural pero filtran sonido. Cerrados aíslan y dan más bajos.",
+  },
+  {
+    q: "WiFi: cuándo upgradear",
+    a: "Si tu router tiene más de 4 años o no soporta WiFi 6, upgradeas y notas la diferencia. Mesh solo si tienes 2+ pisos o muros gruesos.",
+  },
+];
+
 export const Route = createFileRoute("/perifericos")({
   head: () => ({
     meta: [
@@ -20,6 +39,24 @@ export const Route = createFileRoute("/perifericos")({
       {
         property: "og:description",
         content: "Tecnología de última generación para tu setup.",
+      },
+      { property: "og:url", content: "https://aetheracore.lovable.app/perifericos" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://aetheracore.lovable.app/perifericos" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
       },
     ],
   }),

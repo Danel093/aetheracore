@@ -29,26 +29,37 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aethera Core — Eleva tu potencial | Gaming & Productividad Colombia" },
+      { title: "Aethera Core — Gaming & Productividad Colombia" },
       {
         name: "description",
         content:
-          "Aethera Core: hardware de alto rendimiento en Colombia. PCs Gaming, productividad y periféricos especializados en gama media. Envíos a todo el país.",
+          "Hardware de alto rendimiento en Colombia: PCs Gaming, workstations y periféricos. Envíos a todo el país.",
       },
       { name: "author", content: "Aethera Core" },
-      { property: "og:title", content: "Aethera Core — Eleva tu potencial | Gaming & Productividad Colombia" },
-      {
-        property: "og:description",
-        content: "Tecnología de alto rendimiento equilibrando potencia y costo. Colombia.",
-      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Aethera Core" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Aethera Core — Eleva tu potencial | Gaming & Productividad Colombia" },
-      { name: "description", content: "Redefinimos la experiencia tecnológica en Colombia. Hardware de alto rendimiento equilibrando potencia y costo" },
-      { property: "og:description", content: "Redefinimos la experiencia tecnológica en Colombia. Hardware de alto rendimiento equilibrando potencia y costo" },
-      { name: "twitter:description", content: "Redefinimos la experiencia tecnológica en Colombia. Hardware de alto rendimiento equilibrando potencia y costo" },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/1LeSF0RBMeU1BJxfr3e001TXTT22/social-images/social-1776997047449-Gemini_Generated_Image_3mj1tc3mj1tc3mj1.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/1LeSF0RBMeU1BJxfr3e001TXTT22/social-images/social-1776997047449-Gemini_Generated_Image_3mj1tc3mj1tc3mj1.webp" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Aethera Core",
+          url: "https://aetheracore.lovable.app",
+          logo: "https://aetheracore.lovable.app/favicon.ico",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Aethera Core",
+          url: "https://aetheracore.lovable.app",
+        }),
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
