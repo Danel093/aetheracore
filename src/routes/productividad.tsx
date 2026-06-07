@@ -5,10 +5,29 @@ import imgWorkstation from "@/assets/product-workstation.jpg";
 import imgGaming from "@/assets/product-gaming.jpg";
 import imgServer from "@/assets/product-server.jpg";
 
+const FAQ = [
+  {
+    q: "Núcleos vs frecuencia",
+    a: "Render y compilación aman muchos núcleos (Ryzen 9, Threadripper). Edición de video en Premiere prefiere alta frecuencia con menos núcleos.",
+  },
+  {
+    q: "VRAM: la métrica que importa",
+    a: "Para 4K timeline en DaVinci necesitas mínimo 12GB VRAM. Para IA local, 16GB es el piso real.",
+  },
+  {
+    q: "Almacenamiento por capas",
+    a: "SSD NVMe rápido para SO y proyectos activos, SSD SATA para librerías, HDD grande para backups.",
+  },
+  {
+    q: "Multi-monitor real",
+    a: "Para 3 o 4 monitores 4K asegúrate de tener GPU con 4 salidas DisplayPort y un buen escritorio.",
+  },
+];
+
 export const Route = createFileRoute("/productividad")({
   head: () => ({
     meta: [
-      { title: "Workstations Productividad — Aethera Core | Render y edición 4K" },
+      { title: "Workstations — Aethera Core | Render y edición 4K" },
       {
         name: "description",
         content:
@@ -18,6 +37,24 @@ export const Route = createFileRoute("/productividad")({
       {
         property: "og:description",
         content: "Equipos profesionales para render, edición y multitarea.",
+      },
+      { property: "og:url", content: "https://aetheracore.lovable.app/productividad" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://aetheracore.lovable.app/productividad" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
       },
     ],
   }),

@@ -5,10 +5,29 @@ import imgGaming from "@/assets/product-gaming.jpg";
 import imgMiniPc from "@/assets/product-mini-pc.jpg";
 import imgMonitor from "@/assets/product-monitor.jpg";
 
+const FAQ = [
+  {
+    q: "¿1080p, 1440p o 4K?",
+    a: "Para 1080p competitivo, una RTX 4060 sobra. Para 1440p ultra apunta a 4070 SUPER. 4K real exige 4080 o superior.",
+  },
+  {
+    q: "RAM: 16GB vs 32GB",
+    a: "16GB DDR5 sigue siendo suficiente para gaming puro. 32GB solo si transmites, editas o usas múltiples ventanas pesadas en simultáneo.",
+  },
+  {
+    q: "Refrigeración: aire o líquida",
+    a: "Air cooling de buena gama maneja un Ryzen 7 sin problema. Solo invierte en AIO 280/360mm para i9 o Ryzen 9 con overclock.",
+  },
+  {
+    q: "Fuente: la pieza más subestimada",
+    a: "Mínimo 80+ Bronze 650W para builds medios. Para RTX 4070 Ti+ usa 80+ Gold 850W. Una fuente mala fríe componentes caros.",
+  },
+];
+
 export const Route = createFileRoute("/gaming")({
   head: () => ({
     meta: [
-      { title: "Gaming PCs — Aethera Core | Builds de alto FPS en Colombia" },
+      { title: "Gaming PCs — Aethera Core | Builds de alto FPS" },
       {
         name: "description",
         content:
@@ -18,6 +37,24 @@ export const Route = createFileRoute("/gaming")({
       {
         property: "og:description",
         content: "Builds gaming optimizados para FPS y eSports en Colombia.",
+      },
+      { property: "og:url", content: "https://aetheracore.lovable.app/gaming" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://aetheracore.lovable.app/gaming" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
       },
     ],
   }),
