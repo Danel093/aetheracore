@@ -29,13 +29,13 @@ const FAQ = [
 export const Route = createFileRoute("/perifericos")({
   head: () => ({
     meta: [
-      { title: "Periféricos & Conexión Global — Aethera Core" },
+      { title: "Periféricos & Conexión Global — Octa Core" },
       {
         name: "description",
         content:
           "Teclados mecánicos, mouse, monitores, audio y red de última generación. Curados para integrarse a tu setup. Envíos a toda Colombia.",
       },
-      { property: "og:title", content: "Periféricos — Aethera Core" },
+      { property: "og:title", content: "Periféricos — Octa Core" },
       {
         property: "og:description",
         content: "Tecnología de última generación para tu setup.",
@@ -65,7 +65,7 @@ export const Route = createFileRoute("/perifericos")({
       eyebrow="Conexión Global"
       title="Cutting-edge"
       highlight="for your setup."
-      description="Periféricos y tecnología seleccionados con criterio. Cada pieza pasa por nuestro filtro: que valga lo que cuesta y se sienta como parte de tu Aethera."
+      description="Periféricos y tecnología seleccionados con criterio. Cada pieza pasa por nuestro filtro: que valga lo que cuesta y se sienta como parte de tu Octa."
       heroImage={heroImg}
       bullets={[
         "Teclados mecánicos hot-swap",
@@ -75,7 +75,7 @@ export const Route = createFileRoute("/perifericos")({
       ]}
       popular={[
         {
-          name: "Teclado Mecánico Aethera K75",
+          name: "Teclado Mecánico Octa K75",
           tag: "Input",
           description:
             "75% layout, hot-swap, switches Gateron, RGB south-facing y firmware QMK/VIA.",

@@ -38,7 +38,7 @@
 :root {
   --radius: 0.625rem;
 
-  /* Aethera Core — dark by default */
+  /* Octa Core — dark by default */
   --background: oklch(0.18 0.04 250);
   --foreground: oklch(0.97 0.01 240);
 

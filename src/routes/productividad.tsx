@@ -27,13 +27,13 @@ const FAQ = [
 export const Route = createFileRoute("/productividad")({
   head: () => ({
     meta: [
-      { title: "Workstations — Aethera Core | Render y edición 4K" },
+      { title: "Workstations — Octa Core | Render y edición 4K" },
       {
         name: "description",
         content:
           "Workstations para creadores, ingenieros y oficinas. Render 3D, edición 4K, CAD y multitarea profesional. Envíos a todo Colombia.",
       },
-      { property: "og:title", content: "Workstations — Aethera Core" },
+      { property: "og:title", content: "Workstations — Octa Core" },
       {
         property: "og:description",
         content: "Equipos profesionales para render, edición y multitarea.",
@@ -73,7 +73,7 @@ export const Route = createFileRoute("/productividad")({
       ]}
       popular={[
         {
-          name: "Aethera Studio R7",
+          name: "Octa Studio R7",
           tag: "Creator Workstation",
           description:
             "Ryzen 7 + 32GB DDR5 + RTX 4060 Ti 16GB. Edición 4K en Premiere y DaVinci sin lag.",
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/productividad")({
           image: imgWorkstation,
         },
         {
-          name: "Aethera Render X9",
+          name: "Octa Render X9",
           tag: "3D & CAD",
           description:
             "Ryzen 9 7950X + RTX 4070 Ti SUPER + 64GB DDR5. Blender, AutoCAD y Revit a velocidad real.",
@@ -90,7 +90,7 @@ export const Route = createFileRoute("/productividad")({
           image: imgWorkstation,
         },
         {
-          name: "Aethera Office Pro",
+          name: "Octa Office Pro",
           tag: "Oficina Premium",
           description:
             "Core i5-14400 + 16GB DDR5 + 1TB NVMe. Multitarea fluida para Excel pesado y videollamadas.",
@@ -99,7 +99,7 @@ export const Route = createFileRoute("/productividad")({
           image: imgWorkstation,
         },
         {
-          name: "Aethera DevBox",
+          name: "Octa DevBox",
           tag: "Desarrolladores",
           description:
             "Ryzen 9 + 64GB RAM + 2TB NVMe Gen4. Compila proyectos grandes y corre Docker sin sudar.",
@@ -108,7 +108,7 @@ export const Route = createFileRoute("/productividad")({
           image: imgGaming,
         },
         {
-          name: "Aethera AI Forge",
+          name: "Octa AI Forge",
           tag: "IA & Machine Learning",
           description:
             "Core i9 + RTX 4090 24GB + 128GB RAM. Entrena modelos LLM locales y genera imágenes IA.",
@@ -117,7 +117,7 @@ export const Route = createFileRoute("/productividad")({
           image: imgGaming,
         },
         {
-          name: "Aethera Server Mini",
+          name: "Octa Server Mini",
           tag: "Pyme Server",
           description:
             "Servidor compacto Ryzen 7 + 4 bahías HDD + Proxmox preinstalado. NAS y backups en uno.",

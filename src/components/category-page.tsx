@@ -28,7 +28,7 @@ export function CategoryPage(props: CategoryPageProps) {
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
 
   const wa = `https://wa.me/573017367858?text=${encodeURIComponent(
-    `🚀 ¡Hola Aethera Core! Me interesa ${props.title}. ¿Me asesoran?`,
+    `🚀 ¡Hola Octa Core! Me interesa ${props.title}. ¿Me asesoran?`,
   )}`;
 
   return (
