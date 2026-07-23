@@ -39,12 +39,12 @@ export function SiteHeader() {
           <Link to="/" className="flex items-center gap-3 group">
             <img
               src={logo}
-              alt="Aethera Core logo"
+              alt="Octa Core logo"
               className="h-11 w-11 md:h-14 md:w-14 rounded-full object-contain bg-transparent drop-shadow-[0_0_14px_rgba(0,210,255,0.55)] transition-transform group-hover:scale-105"
             />
             <span className="hidden sm:flex flex-col leading-none">
               <span className="font-display text-lg md:text-xl font-extrabold tracking-tight text-gradient-cyan">
-                AETHERA CORE
+                OCTA CORE
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                 Tecnología en movimiento

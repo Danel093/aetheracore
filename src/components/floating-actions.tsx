@@ -13,7 +13,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 const WHATSAPP_NUMBER = "573017367858";
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  "🚀 ¡Hola Aethera Core! Quiero llevar mi setup al siguiente nivel. ¿Me asesoran con mi build ideal?",
+  "🚀 ¡Hola Octa Core! Quiero llevar mi setup al siguiente nivel. ¿Me asesoran con mi build ideal?",
 );
 
 export function FloatingActions() {

@@ -36,13 +36,13 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aethera Core — Eleva tu potencial" },
+      { title: "Octa Core — Eleva tu potencial" },
       {
         name: "description",
         content:
           "Hardware de alto rendimiento en Colombia. PCs Gaming, productividad y periféricos con envíos a todo el país.",
       },
-      { property: "og:title", content: "Aethera Core — Eleva tu potencial" },
+      { property: "og:title", content: "Octa Core — Eleva tu potencial" },
       {
         property: "og:description",
         content: "Redefinimos la experiencia tecnológica en Colombia.",
@@ -81,7 +81,7 @@ function Hero() {
   );
 
   const slides = [
-    { src: heroImage, alt: "Build PC Aethera Core completa", label: "Setup Insignia" },
+    { src: heroImage, alt: "Build PC Octa Core completa", label: "Setup Insignia" },
     { src: carouselGaming, alt: "PC Gamer con iluminación cyan", label: "Gaming Builds" },
     { src: carouselMonitor, alt: "Monitor curvo gaming ultrawide", label: "Inmersión Total" },
     { src: carouselPeripherals, alt: "Teclado mecánico y mouse RGB", label: "Periféricos Premium" },
@@ -107,7 +107,7 @@ function Hero() {
           {/* Copy — compact */}
           <div className="text-center lg:text-left">
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05]">
-              <span className="text-gradient-cyan">Aethera Core:</span>
+              <span className="text-gradient-cyan">Octa Core:</span>
               <br />
               <span className="text-foreground">Eleva tu potencial.</span>
             </h1>
@@ -308,7 +308,7 @@ function Features() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <span className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan">
-              Por qué Aethera Core
+              Por qué Octa Core
             </span>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-extrabold leading-tight">
               Tecnología{" "}
@@ -375,7 +375,7 @@ function CTA() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href={`https://wa.me/573017367858?text=${encodeURIComponent("🚀 ¡Hola Aethera Core! Quiero llevar mi setup al siguiente nivel. ¿Me asesoran con mi build ideal?")}`}
+                href={`https://wa.me/573017367858?text=${encodeURIComponent("🚀 ¡Hola Octa Core! Quiero llevar mi setup al siguiente nivel. ¿Me asesoran con mi build ideal?")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-3.5 text-sm font-bold text-primary-foreground transition-all hover:shadow-[0_0_40px_-5px_rgba(0,210,255,0.8)] hover:scale-[1.03]"
@@ -406,9 +406,9 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
-              <img src={octopusLogo} alt="Aethera Core" className="h-12 w-12 rounded-full object-contain drop-shadow-[0_0_12px_rgba(0,210,255,0.5)]" />
+              <img src={octopusLogo} alt="Octa Core" className="h-12 w-12 rounded-full object-contain drop-shadow-[0_0_12px_rgba(0,210,255,0.5)]" />
               <span className="font-display text-lg font-extrabold text-gradient-cyan">
-                AETHERA CORE
+                OCTA CORE
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground max-w-md leading-relaxed">
@@ -457,7 +457,7 @@ function Footer() {
 
         <div className="mt-12 pt-6 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-muted-foreground">
-            © {year} Aethera Core. Todos los derechos reservados. Colombia 🇨🇴
+            © {year} Octa Core. Todos los derechos reservados. Colombia 🇨🇴
           </p>
           <p className="text-xs text-muted-foreground">
             Tecnología de movimiento · Gaming &amp; Productividad · Conexión Global

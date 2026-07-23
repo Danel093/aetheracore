@@ -27,13 +27,13 @@ const FAQ = [
 export const Route = createFileRoute("/gaming")({
   head: () => ({
     meta: [
-      { title: "Gaming PCs — Aethera Core | Builds de alto FPS" },
+      { title: "Gaming PCs — Octa Core | Builds de alto FPS" },
       {
         name: "description",
         content:
           "PCs Gamer optimizados para alto FPS, refrigeración silenciosa y estética premium. Builds AAA y eSports con envío a todo Colombia.",
       },
-      { property: "og:title", content: "Gaming PCs — Aethera Core" },
+      { property: "og:title", content: "Gaming PCs — Octa Core" },
       {
         property: "og:description",
         content: "Builds gaming optimizados para FPS y eSports en Colombia.",
@@ -73,7 +73,7 @@ export const Route = createFileRoute("/gaming")({
       ]}
       popular={[
         {
-          name: "Aethera Strike R5",
+          name: "Octa Strike R5",
           tag: "Entry Gaming",
           description:
             "Ryzen 5 5600 + RTX 4060 + 16GB DDR4. La mejor relación FPS/precio para 1080p ultra.",
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/gaming")({
           image: imgGaming,
         },
         {
-          name: "Aethera Pulse R7",
+          name: "Octa Pulse R7",
           tag: "Mid-High Gaming",
           description:
             "Ryzen 7 7700 + RTX 4070 SUPER + 32GB DDR5. 1440p ultra y 4K alto sin compromisos.",
@@ -91,7 +91,7 @@ export const Route = createFileRoute("/gaming")({
           image: imgGaming,
         },
         {
-          name: "Aethera Apex i7",
+          name: "Octa Apex i7",
           tag: "Streaming Build",
           description:
             "Core i7-14700K + RTX 4070 Ti + 32GB DDR5 + WiFi 6E. Juega y stremea sin caídas de FPS.",
@@ -100,7 +100,7 @@ export const Route = createFileRoute("/gaming")({
           image: imgGaming,
         },
         {
-          name: "Aethera Vortex i9",
+          name: "Octa Vortex i9",
           tag: "Enthusiast 4K",
           description:
             "Core i9-14900K + RTX 4080 SUPER + 64GB DDR5 + AIO 360mm. 4K ultra a 120 FPS.",
@@ -108,7 +108,7 @@ export const Route = createFileRoute("/gaming")({
           image: imgGaming,
         },
         {
-          name: "Aethera Compact ITX",
+          name: "Octa Compact ITX",
           tag: "Mini Gaming",
           description:
             "Build SFF Ryzen 7 + RTX 4070 en chasis ITX. Mismo poder, mitad del espacio.",
@@ -117,7 +117,7 @@ export const Route = createFileRoute("/gaming")({
           image: imgMiniPc,
         },
         {
-          name: "Aethera Esports Lite",
+          name: "Octa Esports Lite",
           tag: "Competitive",
           description:
             "Ryzen 5 + RTX 4060 + monitor 180Hz incluido. Optimizado para Valorant, CS2 y LoL.",

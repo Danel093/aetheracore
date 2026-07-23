@@ -33,7 +33,7 @@ export function QuickConsultPanel({ open, onOpenChange }: Props) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `🚀 ¡Hola Aethera Core!%0A%0A*Nombre:* ${encodeURIComponent(
+    const text = `🚀 ¡Hola Octa Core!%0A%0A*Nombre:* ${encodeURIComponent(
       name || "—",
     )}%0A*Contacto:* ${encodeURIComponent(
       contact || "—",
@@ -55,7 +55,7 @@ export function QuickConsultPanel({ open, onOpenChange }: Props) {
           <div className="flex items-center gap-3 pr-10">
             <img
               src={octopusLogo}
-              alt="Aethera Core"
+              alt="Octa Core"
               className="h-10 w-10 rounded-full object-contain drop-shadow-[0_0_10px_rgba(0,210,255,0.5)]"
             />
             <div className="text-left">

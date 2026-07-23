@@ -29,15 +29,15 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aethera Core — Gaming & Productividad Colombia" },
+      { title: "Octa Core — Gaming & Productividad Colombia" },
       {
         name: "description",
         content:
           "Hardware de alto rendimiento en Colombia: PCs Gaming, workstations y periféricos. Envíos a todo el país.",
       },
-      { name: "author", content: "Aethera Core" },
+      { name: "author", content: "Octa Core" },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Aethera Core" },
+      { property: "og:site_name", content: "Octa Core" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [
@@ -46,7 +46,7 @@ export const Route = createRootRoute({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Aethera Core",
+          name: "Octa Core",
           url: "https://aetheracore.lovable.app",
           logo: "https://aetheracore.lovable.app/favicon.ico",
         }),
@@ -56,7 +56,7 @@ export const Route = createRootRoute({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Aethera Core",
+          name: "Octa Core",
           url: "https://aetheracore.lovable.app",
         }),
       },
